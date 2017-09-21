@@ -14,3 +14,12 @@ window.addEventListener('beforeinstallprompt', function(event){
     defferedprompt = event;
     return false;
 })
+
+var promise = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        resolve('This is executed after 3 seconds!')
+    }, 3000);
+});
+promise.then(function(data){
+    console.log(data);
+})
