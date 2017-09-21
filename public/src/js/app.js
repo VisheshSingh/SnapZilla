@@ -17,9 +17,14 @@ window.addEventListener('beforeinstallprompt', function(event){
 
 var promise = new Promise(function(resolve, reject){
     setTimeout(function(){
-        resolve('This is executed after 3 seconds!')
+        //resolve('This is executed after 3 seconds!');
+        reject({code:404, message: 'Error identified!'});
     }, 3000);
 });
 promise.then(function(data){
     console.log(data);
+}, function(err){
+    console.log(err.code, err.message);
 })
+
+console.log('This will be executed from setTimeout() ');
