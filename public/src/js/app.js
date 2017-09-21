@@ -21,9 +21,18 @@ var promise = new Promise(function(resolve, reject){
         reject({code:404, message: 'Error identified!'});
     }, 3000);
 });
-promise.then(function(data){
+
+/* promise.then(function(data){
     console.log(data);
 }, function(err){
+    console.log(err.code, err.message);
+}) */
+
+//other way of rejecting error
+promise.then(function(data){
+    console.log(data);
+}).catch(function(err){
+    //console.log(err);
     console.log(err.code, err.message);
 })
 
