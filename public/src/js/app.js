@@ -22,6 +22,18 @@ var promise = new Promise(function(resolve, reject){
     }, 3000);
 });
 
+//FETCH API
+fetch('http://httpbin.org/ip')
+    .then(function(val){
+        console.log(val);
+        //Very imp to extract the data and convert in into json format before you can use it in the next step 
+        return val.json();
+    }).then(function(data){
+        console.log(data);
+    }).catch(function(err){
+        console.log(err);
+    })
+
 /* promise.then(function(data){
     console.log(data);
 }, function(err){
