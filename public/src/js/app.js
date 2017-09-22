@@ -15,7 +15,7 @@ window.addEventListener('beforeinstallprompt', function(event){
     return false;
 })
 
-var promise = new Promise(function(resolve, reject){
+/* var promise = new Promise(function(resolve, reject){
     setTimeout(function(){
         //resolve('This is executed after 3 seconds!');
         reject({code:404, message: 'Error identified!'});
@@ -72,11 +72,11 @@ fetch('http://httpbin.org/ip')
 }) */
 
 //other way of rejecting error
-promise.then(function(data){
+/*promise.then(function(data){
     console.log(data);
 }).catch(function(err){
     //console.log(err);
     console.log(err.code, err.message);
 })
 
-console.log('This will be executed from setTimeout() ');
+console.log('This will be executed from setTimeout() '); */
