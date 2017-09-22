@@ -22,6 +22,19 @@ var promise = new Promise(function(resolve, reject){
     }, 3000);
 });
 
+//AJAX
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://httpbin.org/ip', true);
+xhr.responseType = 'json';
+
+xhr.onload = function(){
+    console.log(xhr.response);
+};
+xhr.onerror = function(){
+    console.log('Error!');
+}
+xhr.send();
+
 //FETCH API
 fetch('http://httpbin.org/ip')
     .then(function(val){
