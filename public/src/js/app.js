@@ -34,6 +34,24 @@ fetch('http://httpbin.org/ip')
         console.log(err);
     })
 
+    fetch('http://httpbin.org/post', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({message: 'This is a message'})
+    })
+    .then(function(val){
+        console.log(val);
+        //Very imp to extract the data and convert in into json format before you can use it in the next step 
+        return val.json();
+    }).then(function(data){
+        console.log(data);
+    }).catch(function(err){
+        console.log(err);
+    })
+
 /* promise.then(function(data){
     console.log(data);
 }, function(err){
